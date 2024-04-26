@@ -3,6 +3,7 @@ import { AppBar, Tabs, Tab, IconButton, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
+import ChatBot from './ChatBot';
 
 const tabStyle = {
   fontFamily: 'Great Vibes, cursive',
@@ -37,11 +38,11 @@ function NavLog() {
           <Tabs centered sx={{ display: { xs: 'none', md: 'flex' } }}>
             <Tab style={{ ...tabStyle }} label='Home' component={Link} to='/ahome' disableRipple disableFocusRipple />
             <Tab style={{ ...tabStyle }} label='Adopt a pet' component={Link} to='/adopt' disableRipple disableFocusRipple />
-            <Tab style={{ ...tabStyle }} label='About PC' component={Link} to="/about" disableRipple disableFocusRipple />
-            <Tab style={{ ...tabStyle }} label='Contact' component={Link} to="/contact" disableRipple disableFocusRipple />
-            <Tab style={{ ...tabStyle }} label='Help' disableRipple disableFocusRipple component={Link} to="/help" />
-            <Tab style={{ ...tabStyle }} label='Donate' component={Link} to='/donate' disableRipple disableFocusRipple />
-            <Tab style={{ ...tabStyle }} label='Accesories' component={Link} to='/donate' disableRipple disableFocusRipple />
+            <Tab style={{ ...tabStyle }} label='About PC' component={Link} to="/aabout" disableRipple disableFocusRipple />
+            <Tab style={{ ...tabStyle }} label='Contact' component={Link} to="/acontact" disableRipple disableFocusRipple />
+           {/* <Tab style={{ ...tabStyle }} label='Help' component={Link} to="/ahelp" disableRipple disableFocusRipple/>*/}
+            <Tab style={{ ...tabStyle }} label='Donate' component={Link} to='/adonate' disableRipple disableFocusRipple />
+            <Tab style={{ ...tabStyle }} label='Accesories' component={Link} to='/accesories' disableRipple disableFocusRipple />
           </Tabs>
         </AppBar>
         <Menu
@@ -49,14 +50,15 @@ function NavLog() {
           open={menuOpen}
           onClose={handleMenuClose}
         >
-          <MenuItem onClick={handleMenuClose} component={Link} to="/">Home</MenuItem>
+          <MenuItem onClick={handleMenuClose} component={Link} to="/ahome">Home</MenuItem>
           <MenuItem onClick={handleMenuClose} component={Link} to="/adopt">Adopt a pet</MenuItem>
-          <MenuItem onClick={handleMenuClose}>About PC</MenuItem>
-          <MenuItem onClick={handleMenuClose} component={Link} to="/contact">Contact</MenuItem>
-          <MenuItem onClick={handleMenuClose}>Help</MenuItem>
-          <MenuItem onClick={handleMenuClose} component={Link} to="/donate">Donate</MenuItem>
-          <MenuItem onClick={handleMenuClose} component={Link} to="/login">Login</MenuItem>
+          <MenuItem onClick={handleMenuClose} component={Link} to="/aabout">About PC</MenuItem>
+          <MenuItem onClick={handleMenuClose} component={Link} to="/acontact">Contact</MenuItem>
+          <MenuItem onClick={handleMenuClose} component={Link} to="/adonate">Donate</MenuItem>
+          <MenuItem onClick={handleMenuClose} component={Link} to="/accesories">Accesories</MenuItem>
         </Menu>
+
+        <footer> <ChatBot/> </footer>
       </React.Fragment>
     </div>
   );

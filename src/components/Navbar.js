@@ -3,6 +3,7 @@ import { AppBar, Tabs, Tab, IconButton, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
+import ChatBot from './ChatBot';
 
 const tabStyle = {
   fontFamily: 'Great Vibes, cursive',
@@ -38,7 +39,7 @@ function Navbar() {
             <Tab style={{ ...tabStyle }} label='Home' component={Link} to='/' disableRipple disableFocusRipple />
             <Tab style={{ ...tabStyle }} label='AboutPC' component={Link} to="/about" disableRipple disableFocusRipple />
             <Tab style={{ ...tabStyle }} label='Contact' component={Link} to="/contact" disableRipple disableFocusRipple />
-            <Tab style={{ ...tabStyle }} label='Help' component={Link} to="/help" disableRipple disableFocusRipple />
+            {/*<Tab style={{ ...tabStyle }} label='Help' component={Link} to="/help" disableRipple disableFocusRipple />*/}
             <Tab style={{ ...tabStyle }} label='Donate' component={Link} to='/donate' disableRipple disableFocusRipple />
           </Tabs>
         </AppBar>
@@ -50,11 +51,12 @@ function Navbar() {
           <MenuItem onClick={handleMenuClose} component={Link} to="/">Home</MenuItem>
           <MenuItem onClick={handleMenuClose} component={Link} to="/about">About PC</MenuItem>
           <MenuItem onClick={handleMenuClose} component={Link} to="/contact">Contact</MenuItem>
-          <MenuItem onClick={handleMenuClose} component={Link} to="/help" >Help</MenuItem>
           <MenuItem onClick={handleMenuClose} component={Link} to="/donate">Donate</MenuItem>
           <MenuItem onClick={handleMenuClose} component={Link} to="/login">Login</MenuItem>
         </Menu>
       </React.Fragment>
+
+      <footer> <ChatBot/> </footer>
     </div>
   );
 }

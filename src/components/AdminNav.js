@@ -35,13 +35,10 @@ function AdminNav() {
             <MenuIcon />
           </IconButton>
           <Tabs centered sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <Tab style={{ ...tabStyle }} label='Home' component={Link} to='/ahome' disableRipple disableFocusRipple />
+            <Tab style={{ ...tabStyle }} label='Home' component={Link} to='/adminhome' disableRipple disableFocusRipple />
             <Tab style={{ ...tabStyle }} label='Requests' component={Link} to='/requests' disableRipple disableFocusRipple />
-            <Tab style={{ ...tabStyle }} label='About PC' component={Link} to="/about" disableRipple disableFocusRipple />
-            <Tab style={{ ...tabStyle }} label='Contact' component={Link} to="/contact" disableRipple disableFocusRipple />
-            <Tab style={{ ...tabStyle }} label='Help' disableRipple disableFocusRipple component={Link} to="/help" />
-            <Tab style={{ ...tabStyle }} label='Donate' component={Link} to='/donate' disableRipple disableFocusRipple />
-            <Tab style={{ ...tabStyle }} label='Accesories' component={Link} to='/donate' disableRipple disableFocusRipple />
+            <Tab style={{ ...tabStyle }} label='Add Accesories' component={Link} to="/add" disableRipple disableFocusRipple />
+            <Tab style={{ ...tabStyle }} label='View Accesories' component={Link} to="/aaccesories" disableRipple disableFocusRipple />
           </Tabs>
         </AppBar>
         <Menu
@@ -49,13 +46,10 @@ function AdminNav() {
           open={menuOpen}
           onClose={handleMenuClose}
         >
-          <MenuItem onClick={handleMenuClose} component={Link} to="/">Home</MenuItem>
-          <MenuItem onClick={handleMenuClose} component={Link} to="/adopt">Adopt a pet</MenuItem>
-          <MenuItem onClick={handleMenuClose}>About PC</MenuItem>
-          <MenuItem onClick={handleMenuClose} component={Link} to="/contact">Contact</MenuItem>
-          <MenuItem onClick={handleMenuClose}>Help</MenuItem>
-          <MenuItem onClick={handleMenuClose} component={Link} to="/donate">Donate</MenuItem>
-          <MenuItem onClick={handleMenuClose} component={Link} to="/login">Login</MenuItem>
+          <MenuItem onClick={handleMenuClose} component={Link} to="/adminhome">Home</MenuItem>
+          <MenuItem onClick={handleMenuClose} component={Link} to="/requests">Requests</MenuItem>
+          <MenuItem onClick={handleMenuClose} component={Link} to="/add">Add Accesories</MenuItem>
+          <MenuItem onClick={handleMenuClose} component={Link} to="/aaccesories">View Accesories</MenuItem>
         </Menu>
       </React.Fragment>
     </div>
