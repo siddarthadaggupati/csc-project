@@ -20,7 +20,7 @@ function App() {
   const handleSignUp = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('https://pc-server-sigma.vercel.app/insert', {
+      const response = await axios.post('https://pc-server-cx87.vercel.app/insert', {
         'name': name,
         'email': email,
         'password': password,
@@ -43,7 +43,7 @@ function App() {
   const handleLogin = async (event)=>{
     event.preventDefault();
     try{
-      const response = await axios.post('https://pc-server-sigma.vercel.app/fetch',{
+      const response = await axios.post('https://pc-server-cx87.vercel.app/fetch',{
         'email': loginmail,
         'password': loginpassword,
       });
