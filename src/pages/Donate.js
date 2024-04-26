@@ -18,7 +18,7 @@ function Donate() {
       order_id: data.id,
       handler: async (response) => {
         try {
-          const verifyurl = "https://pc-server-cx87.vercel.app/api/payment/verify";
+          const verifyurl = "https://pc-server-ts3k.vercel.app/api/payment/verify";
           const { data } = await axios.post(verifyurl, response);
           console.log(data);
         } catch (error) {
@@ -32,7 +32,7 @@ function Donate() {
 
   const handlePayment = async () => {
     try {
-      const orderUrl = "https://pc-server-cx87.vercel.app/payment/orders";
+      const orderUrl = "https://pc-server-ts3k.vercel.app/payment/orders";
       const { data } = await axios.post(orderUrl, { amount: amount });
       console.log(data);
       initPayment(data.data)
