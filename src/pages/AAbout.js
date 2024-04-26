@@ -3,8 +3,8 @@ import image from './dog.jpg';
 import image1 from './dog1.jpg';
 import image2 from './dog2.jpg';
 import './About.css'
-import Navbar from '../components/Navbar';
-function About() {
+import Navbar from '../components/NavLog';
+function AAbout() {
   return (
     <div className="App">
       <div className="navbar">
@@ -29,4 +29,4 @@ function About() {
   );
 }
 
-export default About;
+export default AAbout;

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import '../App.css';
 import './Donate.css';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/NavLog';
 import axios from 'axios'; // Don't forget to import axios
 
-function Donate() {
+function ADonate() {
   const [amount, setAmount] = useState(0);
 
   const initPayment = (data) => {
@@ -63,7 +63,7 @@ function Donate() {
 				<input type="text" id='name'/> <br /><br />
 			<div className="input-container"> 
 				<label htmlFor="height">Enter Amount</label> 
-				<input type="number" id="Amount" min="0" /> <br /><br />
+				<input type="number" id="Amount" min="0" onChange={(e) => setAmount(Number(e.target.value))}/> <br /><br />
 			</div> 
 			<button className="calculate-btn" onClick={handlePayment}> 
 				Donate
@@ -74,4 +74,4 @@ function Donate() {
   );
 }
 
-export default Donate;
+export default ADonate;

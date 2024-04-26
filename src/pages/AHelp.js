@@ -1,8 +1,8 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
+import Navbar from '../components/NavLog'
 import { useState } from 'react';
 import axios from 'axios';
-function Help() {
+function AHelp() {
     const [name,setName] = useState('');
     const [email,setEmail] = useState('');
     const [subject,setSubject] = useState('');
@@ -56,4 +56,4 @@ function Help() {
   )
 }
 
-export default Help
+export default AHelp

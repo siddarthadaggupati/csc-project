@@ -1,5 +1,5 @@
 import React from 'react'
-import NavLog from '../components/NavLog'
+import AdminNav from '../components/AdminNav'
 import axios from 'axios'
 import './ShowRequests.css'
 function ShowRequests() {
@@ -16,7 +16,7 @@ function ShowRequests() {
     return (
         <div>
             <div className="navbar">
-                <NavLog />
+                <AdminNav/>
             </div>
             <div className="remaining">
                 <div className="contanier">

@@ -1,13 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Navbar from "../components/Navbar";
+import NavLog from "../components/AdminNav";
 import "./Home.css";
 import bg from '../images/homebg.png';
 import Slideshow from '../components/Slideshow'; 
-import { Button } from '@mui/material';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { Link } from 'react-router-dom';
 
-function Home() {
+function AdminHome() {
   const remainingRef = useRef(null); 
   const bgImageRef = useRef(null); 
   const [isMobile, setIsMobile] = useState(false);
@@ -35,7 +32,7 @@ function Home() {
   return (
     <div className="home-container">
       <div className="navbar">
-        <Navbar></Navbar>
+        <NavLog></NavLog>
       </div>
       <div className="remaining" ref={remainingRef}>
         <div className="slider-show">
@@ -45,14 +42,9 @@ function Home() {
         <h3 style={{ fontSize: isMobile ? '2rem' : '3rem' }}>
           Paws in Need <br /> Adopt A pet Make Difference <br />Make A Difference <br />Help Animals
         </h3>
-        {!isMobile && (
-          <div className="get-started">
-            <Button style={{ color: 'white', textTransform: 'none' }} component={Link} to='/login'>Get Involved<ArrowForwardIosIcon /></Button>
-          </div>
-        )}
       </div>
     </div>
   );
 }
 
-export default Home;
+export default AdminHome;

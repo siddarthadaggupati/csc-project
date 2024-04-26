@@ -1,9 +1,9 @@
 import React from 'react'
-import NavLog from '../components/NavLog'
+import NavLog from '../components/AdminNav'
 import { useState } from 'react';
 import './Accessories.css'
 import axios from 'axios';
-function Accessories() {
+function AAccessories() {
 
     const [products] = useState([
         { id: 1, name: "Pet bowl", price: 15, category: "collars", image: "https://i.etsystatic.com/8205066/r/il/fe8fe8/851326968/il_570xN.851326968_bo2a.jpg" },
@@ -108,4 +108,4 @@ function Accessories() {
   )
 }
 
-export default Accessories
+export default AAccessories

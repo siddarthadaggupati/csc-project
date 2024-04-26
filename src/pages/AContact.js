@@ -1,8 +1,8 @@
 import React from 'react';
 import '../App.css';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/NavLog';
 import './Contact.css';
-function Contact() {
+function AContact() {
 
   return (
     <div>
@@ -21,4 +21,4 @@ function Contact() {
   )
 }
 
-export default Contact
+export default AContact
