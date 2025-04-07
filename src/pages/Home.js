@@ -43,11 +43,11 @@ function Home() {
         </div>
         <img ref={bgImageRef} src={bg} alt='bg' className="responsive-image" />
         <h3 style={{ fontSize: isMobile ? '2rem' : '3rem' }}>
-          Paws in Need <br /> Adopt A pet Make Difference <br />Make A Difference <br />Help Animals
+          Paws in Need <br /> Adopt A pet <br />Make A Difference <br />Help Animals
         </h3>
         {!isMobile && (
           <div className="get-started">
-            <Button style={{ color: 'white', textTransform: 'none' }} component={Link} to='/login'>Get Involved<ArrowForwardIosIcon /></Button>
+            <Button style={{ color: 'white', textTransform: 'none' }} component={Link} to='https://us-east-1lmfbd2cxv.auth.us-east-1.amazoncognito.com/login?client_id=2gja5lstl7a2gkfp7c5er3lj8s&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fpet-connect-mswd.vercel.app%2Fahome'>Get Involved<ArrowForwardIosIcon /></Button>
           </div>
         )}
       </div>

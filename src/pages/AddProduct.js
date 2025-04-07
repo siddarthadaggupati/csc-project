@@ -12,7 +12,7 @@ function AddProduct() {
     event.preventDefault();
     if (link !== '' && price !== '') {
       try {
-        const response = await axios.post('https://pc-server-chi.vercel.app/addproduct', {
+        const response = await axios.post('http://localhost:8000/addproduct', {
           'link': link,
           'price': price,
         });

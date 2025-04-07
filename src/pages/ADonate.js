@@ -18,7 +18,7 @@ function ADonate() {
       order_id: data.id,
       handler: async (response) => {
         try {
-          const verifyurl = "https://pc-server-chi.vercel.app/api/payment/verify";
+          const verifyurl = "http://localhost:8000/api/payment/verify";
           const { data } = await axios.post(verifyurl, response);
           console.log(data);
         } catch (error) {
@@ -32,7 +32,7 @@ function ADonate() {
 
   const handlePayment = async () => {
     try {
-      const orderUrl = "https://pc-server-chi.vercel.app/payment/orders";
+      const orderUrl = "http://localhost:8000/payment/orders";
       const { data } = await axios.post(orderUrl, { amount: amount });
       console.log(data);
       initPayment(data.data)

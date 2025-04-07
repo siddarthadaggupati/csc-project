@@ -15,6 +15,7 @@ body {
 }
 
 .remaining {
+margin-left: 20px;
 height: 80vh;
 overflow-y: scroll;
 resize: both;

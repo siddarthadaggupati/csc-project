@@ -5,7 +5,7 @@ function AdoptForm() {
 
     const handleSubmit = (e)=>{
         try{
-            const response = axios.post('https://pc-server-chi.vercel.app/adoptdata',{
+            const response = axios.post('http://localhost:8000/adoptdata',{
                 name: name,
                 email: email,
                 phno: phno,
