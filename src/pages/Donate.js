@@ -15,8 +15,8 @@ function Donate() {
     event.preventDefault();
     if(amount>0){
       try {
-        const orderUrl = "http://localhost:8000/api/payment/orders";
-        const { data } = await axios.post(orderUrl, { amount: amount });
+        const orderUrl = "https://n3oxah3m3i.execute-api.us-east-1.amazonaws.com/demo/create-order";
+        const { data } = await axios.post(orderUrl, { amount: 100000 });
         console.log(data);
         initPayment(data.data);
       } catch (error) {
@@ -32,15 +32,13 @@ function Donate() {
   const initPayment = (data) => {
     const options = {
       key: "rzp_test_06GeKary0jkcOO",
-      amount: data.amount,
-      currency: data.currency,
+      amount: 100000 * 1000,
+      currency: "INR",
       name: "Pet Link",
       description: "Test Transaction",
-      image: data.img,
-      order_id: data.id,
       handler: async (response) => {
         try {
-          const verifyurl = "http://localhost:8000/api/payment/verify";
+          const verifyurl = "https://n3oxah3m3i.execute-api.us-east-1.amazonaws.com/demo/verify";
           const { data } = await axios.post(verifyurl, response);
           console.log(data);
           // Show success message to the user

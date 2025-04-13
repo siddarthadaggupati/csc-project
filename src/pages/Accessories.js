@@ -39,15 +39,15 @@ function Accessories() {
   const initPayment = (data) => {
     const options = {
       key: "rzp_test_06GeKary0jkcOO",
-      amount: data.totalAmount,
-      currency: data.currency,
+      amount: 100 * 100, // Amount is in currency subunits. Default is paise. Hence, 100 refers to 100 paise = INR 1.
+      currency: "INR",
       name: "Pet Link",
       description: "Test Transaction",
-      image: data.img,
-      order_id: data.id,
+      
+      //order_id: data.data.id,
       handler: async (response) => {
         try {
-          const verifyurl = "https://localhost:8000/api/payment/verify";
+          const verifyurl = "https://n3oxah3m3i.execute-api.us-east-1.amazonaws.com/demo/verify";
           const { data } = await axios.post(verifyurl, response);
           console.log(data);
         } catch (error) {
@@ -61,9 +61,9 @@ function Accessories() {
 
   const handlePayment = async () => {
     try {
-      const orderUrl = "http://localhost:8000/api/payment/orders";
-      const { data } = await axios.post(orderUrl, { amount: totalAmount });
-      console.log(data);
+      const orderUrl = "https://n3oxah3m3i.execute-api.us-east-1.amazonaws.com/demo/create-order";
+      const { data } = await axios.post(orderUrl, { amount: 100 });
+      console.log(data.data);
       initPayment(data.data)
     } catch (error) {
       console.log(error);
@@ -82,7 +82,7 @@ function Accessories() {
                         <img src={product.image} alt={product.name} />
                         <div className="product-details">
                             <span className="product-name">{product.name}</span>
-                            <span className="product-price">${product.price}</span>
+                            <span className="product-price">₹{product.price}</span>
                             <button className="add-to-cart-btn" onClick={() => addToCart(product.id)}>Add to Cart</button>
                         </div>
                     </div>
@@ -94,12 +94,12 @@ function Accessories() {
                     {cart.map(product => (
                         <li key={product.id}>
                             <span>{product.name}</span>
-                            <span>${product.price}</span>
+                            <span>₹{product.price}</span>
                             <button className="remove-btn" onClick={() => removeFromCart(product.id)}>Remove</button>
                         </li>
                     ))}
                 </ul>
-                <p>Total Amount: ${totalAmount}</p>
+                <p>Total Amount: ₹{totalAmount}</p>
                 <button type = 'submit' onClick={handlePayment}>Pay</button>
             </div>
         </div>

@@ -36,39 +36,39 @@ function AAccessories() {
     }
 
 
-  const initPayment = (data) => {
-    const options = {
-      key: "rzp_test_06GeKary0jkcOO",
-      amount: data.totalAmount,
-      currency: data.currency,
-      name: "Pet Link",
-      description: "Test Transaction",
-      image: data.img,
-      order_id: data.id,
-      handler: async (response) => {
-        try {
-          const verifyurl = "https://localhost:8000/api/payment/verify";
-          const { data } = await axios.post(verifyurl, response);
-          console.log(data);
-        } catch (error) {
-          console.log(error)
+    const initPayment = (data) => {
+      const options = {
+        key: "rzp_test_06GeKary0jkcOO",
+        amount: 100 * 100, // Amount is in currency subunits. Default is paise. Hence, 100 refers to 100 paise = INR 1.
+        currency: "INR",
+        name: "Pet Link",
+        description: "Test Transaction",
+        
+        //order_id: data.data.id,
+        handler: async (response) => {
+          try {
+            const verifyurl = "https://n3oxah3m3i.execute-api.us-east-1.amazonaws.com/demo/verify";
+            const { data } = await axios.post(verifyurl, response);
+            console.log(data);
+          } catch (error) {
+            console.log(error)
+          }
         }
-      }
+      };
+      const rzp1 = new window.Razorpay(options);
+      rzp1.open();
     };
-    const rzp1 = new window.Razorpay(options);
-    rzp1.open();
-  };
-
-  const handlePayment = async () => {
-    try {
-      const orderUrl = "http://localhost:8000/api/payment/orders";
-      const { data } = await axios.post(orderUrl, { amount: totalAmount });
-      console.log(data);
-      initPayment(data.data)
-    } catch (error) {
-      console.log(error);
+  
+    const handlePayment = async () => {
+      try {
+        const orderUrl = "https://n3oxah3m3i.execute-api.us-east-1.amazonaws.com/demo/create-order";
+        const { data } = await axios.post(orderUrl, { amount: 100 });
+        console.log(data.data);
+        initPayment(data.data)
+      } catch (error) {
+        console.log(error);
+      }
     }
-  }
   return (
     <div>
       <div className="navbar">

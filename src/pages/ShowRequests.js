@@ -5,8 +5,8 @@ import './ShowRequests.css'
 function ShowRequests() {
 
     const handleSubmit=()=>{
-       const response =  axios.post('http://localhost:8000/sendmessage',{
-            phno: 9000834981
+       const response =  axios.post('https://n3oxah3m3i.execute-api.us-east-1.amazonaws.com/demo/sendmsg',{
+            phno: +919440611548
         })
         if(response.data ==='sent')
         {

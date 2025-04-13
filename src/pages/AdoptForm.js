@@ -1,11 +1,11 @@
-import {React ,useState} from 'react'
+import React, {useState} from 'react'
 import Navbar from '../components/NavLog'
 import axios from 'axios'
 function AdoptForm() {
 
-    const handleSubmit = (e)=>{
+    const handleSubmit = async (e)=>{
         try{
-            const response = axios.post('http://localhost:8000/adoptdata',{
+            const response = await axios.post('https://n3oxah3m3i.execute-api.us-east-1.amazonaws.com/demo/postdata',{
                 name: name,
                 email: email,
                 phno: phno,
@@ -13,9 +13,9 @@ function AdoptForm() {
                 salary: salary,
                 address: address
             })
-            if(response.data === 'submit')
+            if(response.data.message === 'Form Submitted successfully')
             {
-                alert('Form Submitted')
+                alert(response.data.message) 
             }
             else
             {

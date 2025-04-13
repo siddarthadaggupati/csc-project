@@ -47,7 +47,7 @@ function Home() {
         </h3>
         {!isMobile && (
           <div className="get-started">
-            <Button style={{ color: 'white', textTransform: 'none' }} component={Link} to='https://us-east-1lmfbd2cxv.auth.us-east-1.amazoncognito.com/login?client_id=2gja5lstl7a2gkfp7c5er3lj8s&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fpet-connect-mswd.vercel.app%2Fahome'>Get Involved<ArrowForwardIosIcon /></Button>
+            <Button style={{ color: 'white', textTransform: 'none' }} component={Link} to='https://us-east-1lmfbd2cxv.auth.us-east-1.amazoncognito.com/login?client_id=2gja5lstl7a2gkfp7c5er3lj8s&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fmain.d2fc6wewvgqw0h.amplifyapp.com%2Fahome'>Get Involved<ArrowForwardIosIcon /></Button>
           </div>
         )}
       </div>

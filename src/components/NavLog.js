@@ -43,6 +43,7 @@ function NavLog() {
            {/* <Tab style={{ ...tabStyle }} label='Help' component={Link} to="/ahelp" disableRipple disableFocusRipple/>*/}
             <Tab style={{ ...tabStyle }} label='Donate' component={Link} to='/adonate' disableRipple disableFocusRipple />
             <Tab style={{ ...tabStyle }} label='Accesories' component={Link} to='/accesories' disableRipple disableFocusRipple />
+            <Tab style={{ ...tabStyle }} label='Logout' component={Link} to='https://us-east-1lmfbd2cxv.auth.us-east-1.amazoncognito.com/logout?client_id=2gja5lstl7a2gkfp7c5er3lj8s&logout_uri=https://main.d2fc6wewvgqw0h.amplifyapp.com/' disableRipple disableFocusRipple />
           </Tabs>
         </AppBar>
         <Menu
